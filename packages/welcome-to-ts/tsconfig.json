@@ -1,8 +1,12 @@
 {
   "compilerOptions": {
+    // where do we want the output to be
     "outDir": "dist",
+    // what version of JavaScript do we want to target
     "target": "ES2015",
+    // how do we want to resolve modules
     "moduleResolution": "node",
   },
+  // compile everything in the src diretory
   "include": ["src"]
 }
