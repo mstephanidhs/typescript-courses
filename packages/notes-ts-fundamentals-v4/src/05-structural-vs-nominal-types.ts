@@ -1,5 +1,6 @@
 //* Nominal vs Structural
-
+// Nominal: it's all about names, so we can't assign a Truck to a Car variable (even if it has the same properties/structure)
+// Structural: it's all about structure, so we can assign a Truck to a Car variable (even if it has a different name) since it has the same properties/structure
 class Car {
   make: string
   model: string
@@ -27,10 +28,9 @@ function printCar(car: {
 }) {
   console.log(`${car.make} ${car.model} (${car.year})`)
 }
-/*
-//printCar(new Car()) //✔️ Fine
-//printCar(new Truck()) //✔️ Fine
-//printCar(vehicle) //✔️ Fine
-/**/
+
+printCar(new Car()) //✔️ Fine
+printCar(new Truck()) //✔️ Fine
+printCar(vehicle) //✔️ Fine
 
 export default {}
