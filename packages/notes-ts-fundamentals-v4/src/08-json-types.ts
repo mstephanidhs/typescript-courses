@@ -13,18 +13,20 @@ or one of the following three literal names:
 /**
  * A JSON object type   {    }
  */
-type JSONObject = any
+type JSONObject = {
+  [key: string]: JSONValue
+}
 /**
  * A JSON array type   [    ]
  */
-type JSONArray = any
+type JSONArray = JSONValue[]
 /**
  * A type representing any valid JSON value
  */
-type JSONValue = any
+type JSONValue = JSONObject  | JSONArray | number | string | boolean | null
 
 //! DO NOT EDIT ANY CODE BELOW THIS LINE
-function isJSON(arg: JSONValue) {}
+function isJSON(arg: JSONValue) { }
 
 //✔️ POSITIVE test cases (must pass)
 isJSON('hello') //✔️ Strings
@@ -39,7 +41,7 @@ isJSON({ a: { b: [2, 3, 'foo', null, false] } }) //✔️ A complex object
 //// @ts-expect-error
 isJSON(() => '') //! Functions are not valid JSON
 //// @ts-expect-error
-isJSON(class {}) //! Classes are not valid JSON
+isJSON(class { }) //! Classes are not valid JSON
 //// @ts-expect-error
 isJSON(undefined) //! undefined is not valid JSON
 //// @ts-expect-error
