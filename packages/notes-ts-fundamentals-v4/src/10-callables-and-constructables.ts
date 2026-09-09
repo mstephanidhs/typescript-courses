@@ -1,4 +1,8 @@
 //* Callables
+// A call signature defines the type of a function by specifying 
+// its parameter types and return type, using parentheses instead 
+// of square brackets, and omitting the function name and the 
+// 'function' keyword.
 
 interface TwoNumberCalculation {
   (x: number, y: number): number
@@ -10,7 +14,7 @@ const add: TwoNumberCalculation = (a, b) => a + b
 const subtract: TwoNumberCalc = (x, y) => x - y
 
 //* `void`
-/*
+
 // function printFormattedJSON(obj: string[]) {
 //     console.log(JSON.stringify(obj, null, "  "))
 // }

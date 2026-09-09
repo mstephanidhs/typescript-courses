@@ -1,5 +1,6 @@
 export interface DataTypeRegistry {
   // empty by design
+  // "foo": number
 }
 // the "& string" is just a trick to get
 // a nicer tooltip to show you in the next step
