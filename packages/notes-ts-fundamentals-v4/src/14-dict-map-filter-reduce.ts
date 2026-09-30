@@ -39,11 +39,45 @@ interface Dict<T> {
 }
 
 // Array.prototype.map, but for Dict
-function mapDict(...args: any[]): any {}
+function mapDict<T, S>(inputDict: Dict<T>, mapFunction: (original: T, key: string) => S): Dict<S> {
+  const outputDict: Dict<S> = {};
+
+  for (let k of Object.keys(inputDict)) {
+    const thisVal = inputDict[k];
+    outputDict[k] = mapFunction(thisVal, k);
+  }
+
+  return outputDict;
+}
 // Array.prototype.filter, but for Dict
-function filterDict(...args: any[]): any {}
+function filterDict<T, S>(inputDict: Dict<T>, filterFunction: (original: T, key: string) => boolean): Dict<S> {
+  const outputDict: Dict<S> = {};
+
+  for (let k of Object.keys(InputDict)) {
+    const thisVal = inputDict[k];
+
+    if (filterFunction(thisVal, k)) outputDict[k] = thisVal;
+  }
+
+  return outputDict;
+}
 // Array.prototype.reduce, but for Dict
-function reduceDict(...args: any[]): any {}
+function reduceDict<T, S>(
+  inputDict: Dict<T>,
+  reducerFunction: (
+    currentVal: S,
+    dictItem: T,
+    key: string
+  ) => S,
+  initialValue: S
+): S {
+  let value = initialValue
+  for (let k of Object.keys(inputDict)) {
+    const thisVal = inputDict[k]
+    value = reducerFunction(value, thisVal, k)
+  }
+  return value
+}
 
 /////////////////////////////////////////
 ///////////// TEST SUITE ///////////////

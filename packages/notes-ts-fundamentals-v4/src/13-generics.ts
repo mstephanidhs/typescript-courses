@@ -75,7 +75,7 @@ wrapInArray(new Date())
 //   ^?
 wrapInArray(new RegExp("/s/"))
 
-/*
+
 //? Let's try it!
 // listToDict(
 //   [
@@ -90,10 +90,10 @@ wrapInArray(new RegExp("/s/"))
 // )
 
 //* Best practices
-/*
-// function returnAs<T>(arg: any): T {
-//     return arg //! an `any` that will _seem_ like a `T`
-// } // may as well just cast
+
+function returnAs<T>(arg: any): T {
+    return arg //! an `any` that will _seem_ like a `T`
+} // may as well just cast
 
 /**/
 export default {}
